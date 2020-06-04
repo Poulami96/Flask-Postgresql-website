@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Data Filters
+        </title>
+    </head>
+    <body>
+        <h2>Working with jinja2 filters</h2>
+        {% for series,duration in series|dictsort(false,'value') %}
+        <ul>
+            <li>{{ series|title }} : {{duration|round(1) }}</li>
+        </ul>
+        {% endfor %}
+
+        <hr>
+        <ol type="1">
+            <li>default value : {{ name|default('value not defined',true) }}</li><br>
+            <li>capital case : {{ series_name|capitalize }}</li><br>
+            <li>length : {{ series|length }}items in dictionary</li><br>
+            <li>first item : {{ series|first }}</li><br>
+            <li>make a list : {{series_name|list }}</li><br>
+            <li>replace data : {{ series_name|replace('Lucifer','lucifer')|upper }}</li>
+        </ol>
+        <hr>
+        <h2> more filters</h2>
+        <p>
+            filters are like little utilities that help us modify the varibles or their state.
+
+        </p>
+    </body>
+</html>

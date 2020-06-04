@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Series </title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+    </head>
+    <body>
+        <h2>This collection belongs to {{ name }}</h2>
+    <table>
+        <tr>
+            <th>Series</th>
+            <th>Length</th>
+            <th>Comments</th>
+        </tr>
+        {% for Series,Length in series.items() %}
+            <tr>
+                <td>{{Series }}</td>
+                <td>{{ Length }}</td>
+                {% if Length<=2 %}
+                    <td>Short</td>
+                {% elif Length>=2 and Length<=6 %}
+                    <td>Medium</td>
+                {% else %}
+                    <td style="color:red">Long</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    </body>
+</html>

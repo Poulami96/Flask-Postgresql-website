@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Watchable</title>
+    </head>
+    <body>
+        <h1>Series to watch</h1>
+        <h2>This Collection belongs to {{ name }}</h2>
+        <h3>Series: {{ series }}</h3>
+        <h3>First: {{ series[0] }}</h3>
+        <h3>Slicing: {{ series[1:4] }}</h3>
+        <hr>
+        <ul>
+            {% for item in series %}
+                <li>The seies is: {{ item }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
